@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webhook Management</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Webhook Management</h1>
+        
+        <section id="accounts">
+            <h2>Accounts</h2>
+            <form id="account-form">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="text" id="account_name" placeholder="Account Name" required>
+                <input type="url" id="website" placeholder="Website (optional)">
+                <button type="submit">Create Account</button>
+            </form>
+            <div id="accounts-list"></div>
+        </section>
+
+        <section id="destinations">
+            <h2>Destinations</h2>
+            <form id="destination-form">
+                <input type="text" id="account_id" placeholder="Account ID" required>
+                <input type="url" id="url" placeholder="URL" required>
+                <select id="http_method">
+                    <option value="GET">GET</option>
+                    <option value="POST">POST</option>
+                    <option value="PUT">PUT</option>
+                </select>
+                <textarea id="headers" placeholder="Headers (JSON format)" required></textarea>
+                <button type="submit">Create Destination</button>
+            </form>
+            <div id="destinations-list"></div>
+        </section>
+    </div>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>
